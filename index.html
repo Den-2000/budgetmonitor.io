@@ -1,0 +1,26 @@
+﻿@model List<test.Models.BudgetModel>
+
+    <h2>Budget Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Amount</td>
+                <td>@item.Date.ToShortDateString()</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <p>
+        <a href="/Budget/Add">Add New Item</a>
+    </p>
